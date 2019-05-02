@@ -16,7 +16,7 @@ function Movies({movies, match, history}) {
         <>
         <h4>Movies</h4>
         <div className="movie-list-parent">
-        {movieLinks}
+            {movieLinks}
         </div>
         </>
         
