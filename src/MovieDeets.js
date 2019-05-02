@@ -6,23 +6,21 @@ function MovieDeets({movies, match}) {
     
     console.log("MovieDeets match.params: ", match.params);
     console.log("Movies: ", {movies})
-    let movieDetails = movies.filter((movieDeets) => {
+    let movieDetails = movies.find((movieDeets) => {
         return(
             movieDeets.title === match.params.movie
         );
     })
-    console.log(movieDetails)
+    console.log(movieDetails.poster)
     return(
         <>
-            <h4>{movieDetails[0].title}</h4>
-            <h4>{movieDetails[0].year}</h4>
-            <h4>EMDB Score: {movieDetails[0].EMDB_Score}</h4>
+            <h4>{movieDetails.title}</h4>
+            <h4>{movieDetails.year}</h4>
+            <h4>EMDB Score: {movieDetails.EMDB_Score}</h4>
+            <img src={movieDetails.poster} alt={`${movieDetails.title} movie poster`} />
         </>
     )
 }
 
 
 export default MovieDeets;
-
-
-// let targetName = (this.state.allCharactersArray.filter (function(character) { return character.name === charName}))

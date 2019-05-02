@@ -14,16 +14,20 @@ class App extends React.Component {
       movies: [
         { 'title': 'Pulp Fiction',
           'year': 1994,
-          'EMDB_Score': 8.9},
+          'EMDB_Score': 8.9,
+          'poster': 'https://images-na.ssl-images-amazon.com/images/I/51KEdMtQm-L.jpg'},
         { 'title': 'Lost in Translation',
           'year': 2003,
-          'EMDB_Score': 8.2},
+          'EMDB_Score': 8.2,
+          'poster': 'http://i.ebayimg.com/00/s/NDk5WDMyNA==/z/SnkAAOxy7nNTVlXT/$_3.JPG?set_id=2'},
         { 'title': 'The Secret of NIMH',
           'year': 1982,
-          'EMDB_Score': 7.8},
+          'EMDB_Score': 7.8,
+          'poster': 'https://images-na.ssl-images-amazon.com/images/I/51ZRyDxsroL.jpg'},
         { 'title': 'Big Trouble in Little China',
           'year': 1986,
-          'EMDB_Score': 10.0}
+          'EMDB_Score': 10.0,
+          'poster': 'https://images-na.ssl-images-amazon.com/images/I/515ukfoofxL.jpg'}
       ]
     }
   }
