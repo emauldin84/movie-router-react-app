@@ -31,3 +31,17 @@
     transform: rotate(360deg);
   }
 }
+
+.active {
+  color: red;
+}
+.movie-list-parent {
+  
+}
+.movie-list {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  
+}

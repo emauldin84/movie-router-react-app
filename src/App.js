@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './Home'
 import Movies from './Movies'
+import MovieDeets from './MovieDeets'
+import NotFound from './NotFound'
 
 class App extends React.Component {
   constructor(props) {
@@ -12,16 +14,16 @@ class App extends React.Component {
       movies: [
         { 'title': 'Pulp Fiction',
           'year': 1994,
-          'EMDB Score': 8.9},
+          'EMDB_Score': 8.9},
         { 'title': 'Lost in Translation',
           'year': 2003,
-          'EMDB Score': 8.2},
+          'EMDB_Score': 8.2},
         { 'title': 'The Secret of NIMH',
           'year': 1982,
-          'EMDB Score': 7.8},
+          'EMDB_Score': 7.8},
         { 'title': 'Big Trouble in Little China',
           'year': 1986,
-          'EMDB Score': 10.0}
+          'EMDB_Score': 10.0}
       ]
     }
   }
@@ -32,8 +34,8 @@ class App extends React.Component {
       <h2>EMDB</h2>
 
         <nav>
-          <Link to='/' className='nav'>Home</Link>
-          <Link to='/movies' className='nav'>Movies</Link>
+          <NavLink exact activeClassName="active" to='/' className='nav'>Home</NavLink>
+          <NavLink activeClassName="active" to='/movies' className='nav'>Movies</NavLink>
 
         </nav>
         <Switch>
@@ -45,8 +47,17 @@ class App extends React.Component {
               />
             )}
             />
+          <Route component={NotFound} />
 
         </Switch>
+        <hr></hr>
+        <Route path='/movies/:movie'
+          render={(props) => (
+            <MovieDeets {...props}
+                        movies={this.state.movies}
+            />
+          )}
+          />
 
       </div>
     );
